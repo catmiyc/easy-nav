@@ -331,6 +331,7 @@ PROJECTS
 .projects-center {
   width: 90vw;
   max-width: var(--max-width);
+  /* max-width: var(--fixed-width); */
   margin: 0 auto;
   margin-top: 3rem;
   display: grid;

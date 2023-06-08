@@ -1,11 +1,11 @@
 import React from 'react';
-import heroImg from './assets/hero.svg';
+import heroImg from './assets/hero-code.svg';
 const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-center">
         <div className="hero-title">
-          <h1>contentful CMS</h1>
+          <h1>知行合一</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel,
             aliquam!

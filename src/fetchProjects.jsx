@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 const client = createClient({
   space: 'fye55lse1n75',
   environment: 'master',
-  accessToken: 'wkjVWQoh8RQrCFaM8ZHKq_WQgzXI9AcAAatMl2jHZDs',
+  accessToken: import.meta.env.VITE_API_KEY,
 });
 
 const useFetchProjects = () => {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
-
+  //get projects from contentful
   const getData = async () => {
     try {
       const res = await client.getEntries({ content_type: 'projects' });
@@ -20,6 +20,7 @@ const useFetchProjects = () => {
         const img = image?.fields?.file?.url;
         return { title, url, id, img };
       });
+      console.log(projects);
       setProjects(projects);
       setLoading(false);
     } catch (error) {
@@ -27,9 +28,11 @@ const useFetchProjects = () => {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     getData();
   }, []);
+
   return { loading, projects };
 };
 

@@ -23,7 +23,7 @@ const Projects = () => {
             <a
               className="project"
               key={id}
-              href="url"
+              href={url}
               target="_blank"
               rel="noreferrer"
             >
